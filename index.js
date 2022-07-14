@@ -60,10 +60,25 @@ function foundRegistration(cid) {
   xhr.onload = function () {
     if (xhr.status == 200) {
       const resp = JSON.parse(xhr.response);
-      initialForm(resp);
+      foundReferral(resp);
     } else {
       document.getElementById('content-body').innerHTML =
         '<h1 class="AlreadyRegister">คุณยังไม่ได้ลงทะเบียนกับเรา<br>กรูณาติดต่อแอดมินเพื่อลงทะเบียน<br>ขอบคุณค่ะ</h1>';
+    }
+  };
+  xhr.open('GET', req_url, true);
+  xhr.send();
+}
+
+function foundReferral(json_data) {
+  let req_url = app_config.Service.BaseURL;
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      document.getElementById('content-body').innerHTML =
+        '<h1 class="AlreadyRegister">คุณเคยแนะนำเพื่อนให้กับเราแล้ว<br />ขอบคุณที่ให้ความสนใจในกิจกรรมกับ ZEA Tuna Essence ค่ะ</h1>';
+    } else {
+      initialForm(json_data);
     }
   };
   xhr.open('GET', req_url, true);
