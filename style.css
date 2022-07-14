@@ -30,6 +30,13 @@ tr {
   margin-top: 55px;
 }
 
+.form-title-ios {
+  font-family: dbHelvethaica;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
 .form-title {
   font-family: dbHelvethaica;
   font-size: 25px;
