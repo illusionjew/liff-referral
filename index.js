@@ -186,8 +186,12 @@ function submitForm(cid) {
           dataType: 'json',
           data: json_data,
           success: function (response) {
-            alert('ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา');
-            liff.closeWindow();
+            // alert('ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา');
+            // liff.closeWindow();
+            document.getElementById('content-body').innerHTML =
+              '<h1 class="AlreadyRegister"><img class="thank-you-image" ' +
+              'src="https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/images/ZEA_LOGO_SQ-3.jpg" />' +
+              '<br /><br />ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา</h1>';
           },
           error: function (err) {
             console.log(err);
