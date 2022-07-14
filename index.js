@@ -21,14 +21,14 @@ async function main() {
     withLoginOnExternalBrowser: true,
   });
   if (liff.isLoggedIn()) {
-    getUserProfile();
-    // if (liff.isInClient()) {
-    //   getUserProfile();
-    // } else {
-    //   const div_content = document.getElementById('content-body');
-    //   div_content.innerHTML =
-    //     '<h1 class="AlreadyRegister">กรุณาเปิด Link ด้วย Line Application</h1>';
-    // }
+    // getUserProfile();
+    if (liff.isInClient()) {
+      getUserProfile();
+    } else {
+      const div_content = document.getElementById('content-body');
+      div_content.innerHTML =
+        '<h1 class="AlreadyRegister">กรุณาเปิด Link ด้วย Line Application</h1>';
+    }
   } else {
     liff.login({ redirectUri: app_config.LineConf.RedirectUri });
   }
@@ -42,7 +42,7 @@ async function getUserProfile() {
   // user_profile.statusMessage;
 
   foundRegistration(user_profile.userId);
-  // foundRegistration('mockuserid09'); // change before test
+  // foundRegistration('mockuserid12'); // change before test
 }
 
 function enableSaveBtn() {
