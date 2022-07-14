@@ -10,7 +10,7 @@ import $ from 'jquery';
 import app_config from './assets/app_config.json';
 
 const form_body_html =
-  '<div class="form-title">กรุณากรอกรายชื่อเพื่อนที่แนะนำ</div><div class="form-subtitle">กรุณากรอกข้อมูลในช่องที่มี * ทุกช่อง</div><form id="CampaignReferral" class="form-body needs-validation" novalidate><div class="mb-2"><label class="form-label">ชื่อผู้แนะนำ *</label><input id="FirstnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกชื่อ</div></div><div class="mb-2"><label class="form-label">นามสกุลผู้แนะนำ *</label><input id="SurnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกนามสกุล</div></div><div class="mb-2"><label class="form-label">ชื่อเล่นผู้แนะนำ *</label><input id="NicknameInput" type="text" class="form-control form-control-sm" /></div><div class="mb-2"><ul><li><label class="form-label subform-label">ชื่อ - นามสกุล เพื่อนคนที่ 1 *</label><input id="Fullname1Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 1 *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร *</label><div class="input-group"><input id="Nickname1Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone1Input" type="tel" class="form-control form-control-sm" /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 2*</label><input id="Fullname2Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 2 *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร *</label><div class="input-group"><input id="Nickname2Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone2Input" type="tel" class="form-control form-control-sm" /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 3*</label><input id="Fullname3Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 3 *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร *</label><div class="input-group"><input id="Nickname3Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone3Input" type="tel" class="form-control form-control-sm" /></div></li></ul></div><div class="mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="ChkFriendInfo" /><label class="form-check-label form-label" for="ChkFriendInfo">ขอยืนยันว่ารายชื่อที่แนะนำนี้ได้รับความยินยอมจากบุคคลดังกล่าวแล้ว</label></div></div></form><button type="button" id="SaveReferralForm" class="btn form-control btn-registration" disabled>บันทึกข้อมูล</button>';
+  '<div class="form-title">กรุณากรอกรายชื่อเพื่อนที่แนะนำ</div><div class="form-subtitle">กรุณากรอกข้อมูลในช่องที่มี * ทุกช่อง</div><form id="CampaignReferral" class="form-body needs-validation" novalidate><div class="mb-2"><label class="form-label">ชื่อผู้แนะนำ *</label><input id="FirstnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกชื่อ</div></div><div class="mb-2"><label class="form-label">นามสกุลผู้แนะนำ *</label><input id="SurnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกนามสกุล</div></div><div class="mb-2"><label class="form-label">ชื่อเล่นผู้แนะนำ *</label><input id="NicknameInput" type="text" class="form-control form-control-sm" /></div><div class="mb-2"><ul><li><label class="form-label subform-label">ชื่อ - นามสกุล เพื่อนคนที่ 1 *</label><input id="Fullname1Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 1 *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร *</label><div class="input-group"><input id="Nickname1Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone1Input" type="tel" class="form-control form-control-sm" /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 2*</label><input id="Fullname2Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 2 *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร *</label><div class="input-group"><input id="Nickname2Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone2Input" type="tel" class="form-control form-control-sm" /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 3*</label><input id="Fullname3Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 3 *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร *</label><div class="input-group"><input id="Nickname3Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone3Input" type="tel" class="form-control form-control-sm" /></div></li></ul></div><div class="mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="ChkFriendInfo" /><label class="form-check-label form-label" for="ChkFriendInfo">ข้าพเจ้ารับรองว่าได้รับอนุญาตจากบุคคลที่มีรายชื่อข้างต้นให้เปิดเผยข้อมูลส่วนบุคคลในฐานะ “แขกคนพิเศษ” เพื่อเข้าร่วมกิจกรรมของ ZEA Tuna Essence แล้ว</label></div></div></form><button type="button" id="SaveReferralForm" class="btn form-control btn-registration" disabled>บันทึกข้อมูล</button>';
 
 async function main() {
   await liff.init({
@@ -114,25 +114,33 @@ function submitForm(cid) {
     nickname3_val != '' &&
     phone3_val != ''
   ) {
-    let json_data = {
-      line_id: cid,
-      first_name: firstname_val,
-      last_name: surname_val,
-    };
+    if (
+      phone1_val == phone2_val ||
+      phone1_val == phone3_val ||
+      phone2_val == phone3_val
+    ) {
+      alert('คุณให้หมายเลขเบอร์โทรซ้ำ กรุณากรอกข้อมูลใหม่ให้ถูกต้อง');
+    } else {
+      let json_data = {
+        line_id: cid,
+        first_name: firstname_val,
+        last_name: surname_val,
+      };
 
-    $.ajax({
-      type: 'POST',
-      url: req_url,
-      dataType: 'json',
-      data: json_data,
-      success: function (response) {
-        alert('ขอบคุณที่ลงทะเบียนเข้าร่วมกิจกรรมกับเรา');
-        liff.closeWindow();
-      },
-      error: function (err) {
-        console.log(err);
-      },
-    });
+      $.ajax({
+        type: 'POST',
+        url: req_url,
+        dataType: 'json',
+        data: json_data,
+        success: function (response) {
+          alert('ขอบคุณที่ลงทะเบียนเข้าร่วมกิจกรรมกับเรา');
+          liff.closeWindow();
+        },
+        error: function (err) {
+          console.log(err);
+        },
+      });
+    }
   } else {
     alert('กรุณากรอกข้อมูลในช่องที่มีเครื่องหมาย * ให้ครบถ้วน');
   }

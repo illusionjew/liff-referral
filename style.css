@@ -189,6 +189,7 @@ input:checked + .slider:before {
 }
 
 .subform-label {
+  width: 100%;
   text-align: justify;
   margin-bottom: 0px;
   margin-top: 6px;
