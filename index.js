@@ -27,7 +27,8 @@ async function main() {
     } else {
       const div_content = document.getElementById('content-body');
       div_content.innerHTML =
-        '<h1 class="AlreadyRegister">กรุณาเปิด Link ด้วย Line Application</h1>';
+        '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br />' +
+        '<br /><br /><br /><br />กรุณาเปิด Link ด้วย Line Application</h1>';
     }
   } else {
     liff.login({ redirectUri: app_config.LineConf.RedirectUri });
@@ -63,7 +64,8 @@ function foundRegistration(cid) {
       foundReferral(resp);
     } else {
       document.getElementById('content-body').innerHTML =
-        '<h1 class="AlreadyRegister">คุณยังไม่ได้ลงทะเบียนกับเรา<br />กรูณาติดต่อแอดมินเพื่อลงทะเบียน<br />ขอบคุณค่ะ</h1>';
+        '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br /><br /><br />' +
+        'คุณยังไม่ได้ลงทะเบียนกับเรา<br />กรูณาติดต่อแอดมินเพื่อลงทะเบียน<br />ขอบคุณค่ะ</h1>';
     }
   };
   xhr.open('GET', req_url, true);
@@ -77,7 +79,9 @@ function foundReferral(json_data) {
   xhr.onload = function () {
     if (xhr.status == 200) {
       document.getElementById('content-body').innerHTML =
-        '<h1 class="AlreadyRegister">คุณเคยแนะนำเพื่อนให้กับเราแล้ว<br />ขอบคุณที่ให้ความสนใจในกิจกรรม</h1>';
+        '<h1 class="AlreadyRegister">' +
+        '<img class="thank-you-image" src="https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/images/Check-Icon.png" />' +
+        '<br /><br />คุณเคยแนะนำเพื่อนให้กับเราแล้ว<br />ขอบคุณที่ให้ความสนใจในกิจกรรม</h1>';
     } else {
       initialForm(json_data);
     }
@@ -189,9 +193,9 @@ function submitForm(cid) {
             // alert('ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา');
             // liff.closeWindow();
             document.getElementById('content-body').innerHTML =
-              '<h1 class="AlreadyRegister"><img class="thank-you-image" ' +
-              'src="https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/images/ZEA_LOGO_SQ-3.jpg" />' +
-              '<br /><br />ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา</h1>';
+              '<h1 class="AlreadyRegister">' +
+              '<img class="thank-you-image" src="https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/images/Check-Icon.png" />' +
+              '<br /><br /><b>ลงทะเบียนสำเร็จ</b><br />ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา</h1>';
           },
           error: function (err) {
             console.log(err);
