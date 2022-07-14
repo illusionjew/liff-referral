@@ -76,7 +76,7 @@ function foundReferral(json_data) {
   xhr.onload = function () {
     if (xhr.status == 200) {
       document.getElementById('content-body').innerHTML =
-        '<h1 class="AlreadyRegister">คุณเคยแนะนำเพื่อนให้กับเราแล้ว<br />ขอบคุณที่ให้ความสนใจในกิจกรรมกับ ZEA Tuna Essence ค่ะ</h1>';
+        '<h1 class="AlreadyRegister">คุณเคยแนะนำเพื่อนให้กับเราแล้ว<br />ขอบคุณที่ให้ความสนใจในกิจกรรม</h1>';
     } else {
       initialForm(json_data);
     }
