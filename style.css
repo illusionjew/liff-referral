@@ -203,7 +203,7 @@ input:checked + .slider:before {
 }
 
 .friend-nickname-input {
-  width: 30% !important;
+  width: 25% !important;
   margin-right: 10px;
 }
 
