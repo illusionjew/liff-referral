@@ -1,0 +1,209 @@
+@font-face {
+  font-family: dbHelvethaica;
+  src: url(https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/fonts/DB-Helvethaica-X-v3.2.ttf);
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-width: 1px !important;
+}
+
+.logo-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  border-radius: 50%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.navbar-style {
+  background-color: #002d74;
+}
+
+.form-container {
+  margin-top: 55px;
+}
+
+.form-title {
+  font-family: dbHelvethaica;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.form-subtitle {
+  font-family: dbHelvethaica;
+  color: gray;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.form-body {
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#PrefixnameDiv {
+  display: none;
+}
+
+.gender-radio {
+  border: 0px;
+}
+
+.btn-registration,
+.btn-registration:hover {
+  color: white;
+  background-color: #002d74;
+}
+
+.btn-registration:disabled {
+  color: white;
+  background-color: gray;
+}
+
+.form-label,
+.form-select,
+.form-control {
+  font-family: dbHelvethaica;
+  font-size: 20px !important;
+}
+
+.form-label {
+  margin-bottom: 4px;
+}
+
+#BtnRejectConsent {
+  border-color: red;
+  background-color: white;
+  color: red;
+  height: 36px;
+  width: 100%;
+}
+
+#BtnSaveConsent {
+  color: white;
+  background-color: #002d74;
+  height: 36px;
+  width: 100%;
+}
+
+#BtnSaveConsent:disabled {
+  color: white;
+  background-color: gray;
+}
+
+.AlreadyRegister {
+  font-family: dbHelvethaica;
+  text-align: center;
+}
+
+.show-modal {
+  display: block;
+  margin-top: 30px;
+}
+
+.modal-footer-style {
+  text-align: center;
+  padding: 5px;
+}
+
+.consentBtn {
+  display: inline;
+  width: 47%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.table-consent {
+  border-color: transparent;
+}
+
+.subform-label {
+  text-align: justify;
+  margin-bottom: 0px;
+  margin-top: 6px;
+}
+
+.friend-nickname-input {
+  width: 30% !important;
+  margin-right: 10px;
+}
+
+.checkbox-label {
+  width: 80%;
+  text-align: justify;
+}
+
+#ChkFriendInfo {
+  margin-top: 6px;
+}
