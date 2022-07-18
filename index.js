@@ -19,22 +19,22 @@ const ios_form_body_html =
 async function main() {
   await liff.init({
     liffId: app_config.LineConf.LiffId,
-    // withLoginOnExternalBrowser: true,
+    withLoginOnExternalBrowser: true,
   });
-  getUserProfile();
-  // if (liff.isLoggedIn()) {
-  //   // getUserProfile();
-  //   if (liff.isInClient()) {
-  //     getUserProfile();
-  //   } else {
-  //     const div_content = document.getElementById('content-body');
-  //     div_content.innerHTML =
-  //       '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br />' +
-  //       '<br /><br /><br /><br />กรุณาเปิด Link ด้วย Line Application</h1>';
-  //   }
-  // } else {
-  //   liff.login({ redirectUri: app_config.LineConf.RedirectUri });
-  // }
+  // getUserProfile();
+  if (liff.isLoggedIn()) {
+    // getUserProfile();
+    if (liff.isInClient()) {
+      getUserProfile();
+    } else {
+      const div_content = document.getElementById('content-body');
+      div_content.innerHTML =
+        '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br />' +
+        '<br /><br /><br /><br />กรุณาเปิด Link ด้วย Line Application</h1>';
+    }
+  } else {
+    liff.login({ redirectUri: app_config.LineConf.RedirectUri });
+  }
 }
 main();
 
@@ -67,7 +67,7 @@ function foundRegistration(cid) {
     } else {
       document.getElementById('content-body').innerHTML =
         '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br /><br /><br />' +
-        'คุณยังไม่ได้ลงทะเบียนกับเรา<br />กรูณาพิมพ์ "<b>กิจกรรม</b>"<br />เพื่อลงทะเบียนเข้าร่วมกิจกรรม</h1>';
+        'คุณยังไม่ได้ลงทะเบียนกับเรา<br />กรุณาพิมพ์ "<b>กิจกรรม</b>"<br />เพื่อลงทะเบียนเข้าร่วมกิจกรรม</h1>';
     }
   };
   xhr.open('GET', req_url, true);
