@@ -83,7 +83,7 @@ tr {
 .form-select,
 .form-control {
   font-family: dbHelvethaica;
-  font-size: 20px !important;
+  font-size: 20px;
 }
 
 .form-label {
@@ -225,4 +225,8 @@ input:checked + .slider:before {
   width: 20%;
   /* height: 20%; */
   margin-top: 60%;
+}
+
+#ChkFriendLb {
+  font-size: 19px !important;
 }
