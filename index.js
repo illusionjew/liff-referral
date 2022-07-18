@@ -10,29 +10,31 @@ import $ from 'jquery';
 import app_config from './assets/app_config.json';
 
 const form_body_html =
-  '<div class="form-title">กรุณากรอกรายชื่อเพื่อนที่แนะนำ</div><div class="form-subtitle">กรุณากรอกข้อมูลในช่องที่มี * ทุกช่อง</div><form id="CampaignReferral" class="form-body needs-validation" novalidate><div class="mb-2"><label class="form-label">ชื่อผู้แนะนำ *</label><input id="FirstnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกชื่อ</div></div><div class="mb-2"><label class="form-label">นามสกุลผู้แนะนำ *</label><input id="SurnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกนามสกุล</div></div><div class="mb-2"><label class="form-label">ชื่อเล่นผู้แนะนำ *</label><input id="NicknameInput" type="text" class="form-control form-control-sm" /></div><div class="mb-2"><ul><li><label class="form-label subform-label">ชื่อ - นามสกุล เพื่อนคนที่ 1 *</label><input id="Fullname1Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 1 *&emsp;&emsp;&emsp;&ensp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname1Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone1Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 2 *</label><input id="Fullname2Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 2 *&emsp;&emsp;&emsp;&ensp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname2Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone2Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 3 *</label><input id="Fullname3Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 3 *&emsp;&emsp;&emsp;&ensp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname3Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone3Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li></ul></div><div class="mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="ChkFriendInfo" /><label class="form-check-label form-label" for="ChkFriendInfo">ข้าพเจ้ารับรองว่าได้รับอนุญาตจากบุคคลที่มีรายชื่อข้างต้นให้เปิดเผยข้อมูลส่วนบุคคลในฐานะ “แขกคนพิเศษ” เพื่อเข้าร่วมกิจกรรมของ ZEA Tuna Essence แล้ว</label></div></div></form><button type="button" id="SaveReferralForm" class="btn form-control btn-registration" disabled>บันทึกข้อมูล</button>';
+  '<div class="form-title">กรุณากรอกรายชื่อเพื่อนที่แนะนำ</div><div class="form-subtitle">กรุณากรอกข้อมูลในช่องที่มี * ทุกช่อง</div><form id="CampaignReferral" class="form-body needs-validation" novalidate><div class="mb-2"><label class="form-label">ชื่อผู้แนะนำ *</label><input id="FirstnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกชื่อ</div></div><div class="mb-2"><label class="form-label">นามสกุลผู้แนะนำ *</label><input id="SurnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกนามสกุล</div></div><div class="mb-2"><label class="form-label">ชื่อเล่นผู้แนะนำ *</label><input id="NicknameInput" type="text" class="form-control form-control-sm" /></div><div class="mb-2"><ul><li><label class="form-label subform-label">เพื่อนคนที่ 1</label><label class="form-label">ชื่อ - นามสกุล</label><input id="Fullname1Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่น *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname1Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone1Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label subform-label">เพื่อนคนที่ 2</label><label class="form-label">ชื่อ - นามสกุล</label><input id="Fullname2Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่น *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname2Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone2Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label subform-label">เพื่อนคนที่ 3</label><label class="form-label">ชื่อ - นามสกุล</label><input id="Fullname3Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่น *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname3Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone3Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li></ul></div><div class="mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="ChkFriendInfo" /><label class="form-check-label form-label" for="ChkFriendInfo">ข้าพเจ้ารับรองว่าได้รับอนุญาตจากบุคคลที่มีรายชื่อข้างต้นให้เปิดเผยข้อมูลส่วนบุคคลในฐานะ “แขกคนพิเศษ” เพื่อเข้าร่วมกิจกรรมของ ZEA Tuna Essence แล้ว</label></div></div></form><button type="button" id="SaveReferralForm" class="btn form-control btn-registration" disabled>บันทึกข้อมูล</button>';
 
 const ios_form_body_html =
-  '<div class="form-title-ios">กรุณากรอกรายชื่อเพื่อนที่แนะนำ</div><div class="form-subtitle">กรุณากรอกข้อมูลในช่องที่มี * ทุกช่อง</div><form id="CampaignReferral" class="form-body needs-validation" novalidate><div class="mb-2"><label class="form-label">ชื่อผู้แนะนำ *</label><input id="FirstnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกชื่อ</div></div><div class="mb-2"><label class="form-label">นามสกุลผู้แนะนำ *</label><input id="SurnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกนามสกุล</div></div><div class="mb-2"><label class="form-label">ชื่อเล่นผู้แนะนำ *</label><input id="NicknameInput" type="text" class="form-control form-control-sm" /></div><div class="mb-2"><ul><li><label class="form-label subform-label">ชื่อ - นามสกุล เพื่อนคนที่ 1 *</label><input id="Fullname1Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 1 *&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname1Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone1Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 2 *</label><input id="Fullname2Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 2 *&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname2Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone2Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label">ชื่อ - นามสกุล เพื่อนคนที่ 3 *</label><input id="Fullname3Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่นเพื่อนคนที่ 3 *&emsp;&emsp;&emsp;&emsp;&nbsp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname3Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone3Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li></ul></div><div class="mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="ChkFriendInfo" /><label class="form-check-label form-label" for="ChkFriendInfo">ข้าพเจ้ารับรองว่าได้รับอนุญาตจากบุคคลที่มีรายชื่อข้างต้นให้เปิดเผยข้อมูลส่วนบุคคลในฐานะ “แขกคนพิเศษ” เพื่อเข้าร่วมกิจกรรมของ ZEA Tuna Essence แล้ว</label></div></div></form><button type="button" id="SaveReferralForm" class="btn form-control btn-registration" disabled>บันทึกข้อมูล</button>';
+  '<div class="form-title">กรุณากรอกรายชื่อเพื่อนที่แนะนำ</div><div class="form-subtitle">กรุณากรอกข้อมูลในช่องที่มี * ทุกช่อง</div><form id="CampaignReferral" class="form-body needs-validation" novalidate><div class="mb-2"><label class="form-label">ชื่อผู้แนะนำ *</label><input id="FirstnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกชื่อ</div></div><div class="mb-2"><label class="form-label">นามสกุลผู้แนะนำ *</label><input id="SurnameInput" type="text" class="form-control form-control-sm" /><div class="invalid-feedback">กรุณากรอกนามสกุล</div></div><div class="mb-2"><label class="form-label">ชื่อเล่นผู้แนะนำ *</label><input id="NicknameInput" type="text" class="form-control form-control-sm" /></div><div class="mb-2"><ul><li><label class="form-label subform-label">เพื่อนคนที่ 1</label><label class="form-label">ชื่อ - นามสกุล</label><input id="Fullname1Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่น *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname1Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone1Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label subform-label">เพื่อนคนที่ 2</label><label class="form-label">ชื่อ - นามสกุล</label><input id="Fullname2Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่น *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname2Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone2Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li><li><label class="form-label subform-label">เพื่อนคนที่ 3</label><label class="form-label">ชื่อ - นามสกุล</label><input id="Fullname3Input" type="text" class="form-control form-control-sm" /><label class="form-label subform-label">ชื่อเล่น *&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;เบอร์โทร (10 หลัก) *</label><div class="input-group"><input id="Nickname3Input" type="text" class="form-control form-control-sm friend-nickname-input" /><input id="Phone3Input" type="tel" class="form-control form-control-sm" maxlength=10 /></div></li></ul></div><div class="mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="ChkFriendInfo" /><label class="form-check-label form-label" for="ChkFriendInfo">ข้าพเจ้ารับรองว่าได้รับอนุญาตจากบุคคลที่มีรายชื่อข้างต้นให้เปิดเผยข้อมูลส่วนบุคคลในฐานะ “แขกคนพิเศษ” เพื่อเข้าร่วมกิจกรรมของ ZEA Tuna Essence แล้ว</label></div></div></form><button type="button" id="SaveReferralForm" class="btn form-control btn-registration" disabled>บันทึกข้อมูล</button>';
+// &emsp; &ensp; &nbsp;
 
 async function main() {
   await liff.init({
     liffId: app_config.LineConf.LiffId,
-    withLoginOnExternalBrowser: true,
+    // withLoginOnExternalBrowser: true,
   });
-  if (liff.isLoggedIn()) {
-    // getUserProfile();
-    if (liff.isInClient()) {
-      getUserProfile();
-    } else {
-      const div_content = document.getElementById('content-body');
-      div_content.innerHTML =
-        '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br />' +
-        '<br /><br /><br /><br />กรุณาเปิด Link ด้วย Line Application</h1>';
-    }
-  } else {
-    liff.login({ redirectUri: app_config.LineConf.RedirectUri });
-  }
+  getUserProfile();
+  // if (liff.isLoggedIn()) {
+  //   // getUserProfile();
+  //   if (liff.isInClient()) {
+  //     getUserProfile();
+  //   } else {
+  //     const div_content = document.getElementById('content-body');
+  //     div_content.innerHTML =
+  //       '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br />' +
+  //       '<br /><br /><br /><br />กรุณาเปิด Link ด้วย Line Application</h1>';
+  //   }
+  // } else {
+  //   liff.login({ redirectUri: app_config.LineConf.RedirectUri });
+  // }
 }
 main();
 
@@ -65,7 +67,7 @@ function foundRegistration(cid) {
     } else {
       document.getElementById('content-body').innerHTML =
         '<h1 class="AlreadyRegister"><br /><br /><br /><br /><br /><br /><br />' +
-        'คุณยังไม่ได้ลงทะเบียนกับเรา<br />กรูณาติดต่อแอดมินเพื่อลงทะเบียน<br />ขอบคุณค่ะ</h1>';
+        'คุณยังไม่ได้ลงทะเบียนกับเรา<br />กรูณาพิมพ์ "<b>กิจกรรม</b>"<br />เพื่อลงทะเบียนเข้าร่วมกิจกรรม</h1>';
     }
   };
   xhr.open('GET', req_url, true);
@@ -81,7 +83,7 @@ function foundReferral(json_data) {
       document.getElementById('content-body').innerHTML =
         '<h1 class="AlreadyRegister">' +
         '<img class="thank-you-image" src="https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/images/Check-Icon.png" />' +
-        '<br /><br />คุณเคยแนะนำเพื่อนให้กับเราแล้ว<br />ขอบคุณที่ให้ความสนใจในกิจกรรม</h1>';
+        '<br /><br />คุณได้ลงทะเบียนเข้าร่วมกิจกรรมเป็นที่เรียบร้อยแล้ว</h1>';
     } else {
       initialForm(json_data);
     }
@@ -131,13 +133,13 @@ function submitForm(cid) {
     firstname_val != '' &&
     surname_val != '' &&
     nickname_val != '' &&
-    fullname1_val != '' &&
+    // fullname1_val != '' &&
     nickname1_val != '' &&
     phone1_val != '' &&
-    fullname2_val != '' &&
+    // fullname2_val != '' &&
     nickname2_val != '' &&
     phone2_val != '' &&
-    fullname3_val != '' &&
+    // fullname3_val != '' &&
     nickname3_val != '' &&
     phone3_val != ''
   ) {
@@ -190,12 +192,13 @@ function submitForm(cid) {
           dataType: 'json',
           data: json_data,
           success: function (response) {
-            // alert('ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา');
-            // liff.closeWindow();
             document.getElementById('content-body').innerHTML =
               '<h1 class="AlreadyRegister">' +
               '<img class="thank-you-image" src="https://raw.githubusercontent.com/illusionjew/stackblitz-liff-template/main/assets/images/Check-Icon.png" />' +
-              '<br /><br /><b>ลงทะเบียนสำเร็จ</b><br />ขอบคุณที่เข้าร่วมกิจกรรมแนะนำเพื่อนกับเรา</h1>';
+              '<br /><br />ขอบคุณที่ลงทะเบียนเข้าร่วมกิจกรรม<br />ZEA Tuna Essence</h1>';
+            setTimeout(() => {
+              liff.closeWindow();
+            }, 3000);
           },
           error: function (err) {
             console.log(err);
