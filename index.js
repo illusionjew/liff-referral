@@ -7,6 +7,9 @@ import liff from '@line/liff';
 // Import jquery
 import $ from 'jquery';
 
+// Import custom alert
+import swal from 'sweetalert';
+
 import app_config from './assets/app_config.json';
 
 const form_body_html =
@@ -147,16 +150,22 @@ function submitForm(cid) {
       phone2_val.length != 10 ||
       phone3_val.length != 10
     ) {
-      alert(
-        'คุณให้หมายเลขเบอร์โทรไม่ครบ 10 หลัก กรุณากรอกข้อมูลใหม่ให้ถูกต้อง'
-      );
+      swal({
+        text: 'คุณให้หมายเลขเบอร์โทรไม่ครบ 10 หลัก\nกรุณากรอกข้อมูลใหม่ให้ถูกต้อง',
+        icon: 'warning',
+        button: false,
+      });
     } else {
       if (
         phone1_val == phone2_val ||
         phone1_val == phone3_val ||
         phone2_val == phone3_val
       ) {
-        alert('คุณให้หมายเลขเบอร์โทรซ้ำ กรุณากรอกข้อมูลใหม่ให้ถูกต้อง');
+        swal({
+          text: 'คุณให้หมายเลขเบอร์โทรซ้ำ\nกรุณากรอกข้อมูลใหม่ให้ถูกต้อง',
+          icon: 'warning',
+          button: false,
+        });
       } else {
         let json_data = {
           line_id: cid,
@@ -207,6 +216,10 @@ function submitForm(cid) {
       }
     }
   } else {
-    alert('กรุณากรอกข้อมูลในช่องที่มีเครื่องหมาย * ให้ครบถ้วน');
+    swal({
+      text: 'กรุณากรอกข้อมูลในช่อง\nที่มีเครื่องหมาย * ให้ครบถ้วน',
+      icon: 'warning',
+      button: false,
+    });
   }
 }

@@ -234,3 +234,7 @@ input:checked + .slider:before {
 #ChkFriendLb {
   font-size: 19px !important;
 }
+
+.swal-modal .swal-text {
+  text-align: center;
+}
