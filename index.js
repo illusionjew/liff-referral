@@ -44,7 +44,7 @@ async function getUserProfile() {
   // user_profile.displayName;
   // user_profile.statusMessage;
 
-  foundRegistration(user_profile.userId);
+  foundRegistration('T' + user_profile.userId);
   // foundRegistration('mockuserid12'); // change before test
 }
 
