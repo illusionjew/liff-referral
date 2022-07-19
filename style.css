@@ -200,10 +200,14 @@ input:checked + .slider:before {
 }
 
 .subform-label {
-  width: 100%;
-  text-align: justify;
+  /* width: 100%;
+  text-align: justify; */
   margin-bottom: 0px;
   margin-top: 6px;
+}
+
+.form-label-new-line {
+  width: 100%;
 }
 
 .friend-nickname-input {
